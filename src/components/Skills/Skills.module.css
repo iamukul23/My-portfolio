@@ -1,0 +1,237 @@
+.autoshow {
+  /* color: aqua; */
+  /* animation: text-appear both; */
+  /* animation-timeline: view(20% , 5%); */
+  /* animation-range: entry 20% cover 100vh; */
+
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+/* @keyframes text-appear {
+  from {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+} */
+
+.section_titlebar {
+  text-align: center;
+  margin-bottom: var(--mb-2);
+}
+.section_title {
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--title-color);
+}
+
+.section_subtitle {
+  font-size: 1.25rem;
+  color: var(--text-color);
+  margin-bottom: var(--mb-2);
+}
+
+.skills_container {
+  grid-template-columns: repeat(2, 350px);
+  column-gap: 3rem;
+  justify-content: center;
+}
+
+.skills_content {
+  /* background-color: var(--container-color); */
+  /* border: 1px solid rgba(0, 0, 0, 0.1); */
+  background-color: #bababa20;
+  border: 1px solid rgba(133, 133, 133, 0.3);
+  padding: 2rem 1rem;
+  border-radius: 1.25rem;
+}
+
+.skills_title {
+  font-size: 1rem;
+  font-weight: var(--font-medium);
+  text-align: center;
+  margin-bottom: var(--mb-1-5);
+}
+
+.skills_box {
+  display: flex;
+  justify-content: center;
+  column-gap: 2.5em;
+}
+.skills_group {
+  display: grid;
+  align-items: flex-start;
+  row-gap: 1rem;
+}
+
+.skills_data {
+  display: flex;
+  column-gap: 0.5rem;
+}
+
+.badgeIcon {
+  font-style: 1rem;
+  color: var(--title-color);
+  margin-top: 2px;
+}
+
+.skills_name {
+  font-style: var(--normal-font-size);
+  font-weight: var(--font-medium);
+  line-height: 18px;
+}
+
+.skills_level {
+  font-size: 0.76rem;
+}
+
+/* For large devices 992*/
+@media screen and (max-width: 992px) {
+}
+/* For medium devices */
+@media screen and (max-width: 768px) {
+  .skills_container {
+    grid-template-columns: max-content;
+    row-gap: 2rem;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .skills_container {
+    grid-template-columns: 1fr;
+  }
+
+  .skills_content {
+    padding: 1.5rem;
+  }
+}
+
+/* For small devices */
+@media screen and (max-width: 350px) {
+  .skills_box {
+    column-gap: 1.25rem;
+  }
+  .skills_name {
+    font-size: var(--small-font-size);
+  }
+}
+
+/* .................infinity scroll................ */
+
+.infinity_scroll {
+  margin-top: 3.2rem;
+  margin-bottom: 3.2rem;
+}
+
+.wrapper {
+  margin-top: 0.1rem;
+  width: 90%;
+  max-width: 1536px;
+  margin-inline: auto;
+  height: 100px;
+  position: relative;
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 1) 20%,
+    rgba(0, 0, 0, 1) 80%,
+    rgba(0, 0, 0, 0)
+  );
+  mask-image: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 1) 20%,
+    rgba(0, 0, 0, 1) 80%,
+    rgba(0, 0, 0, 0)
+  );
+  /* mask-image: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 1) 20%,
+    rgba(0, 0, 0, 1) 80%,
+    rgba(0, 0, 0, 0)
+  ); */
+}
+
+@keyframes scrollLeft {
+  to {
+    left: -200px;
+  }
+}
+
+@keyframes scrollRight {
+  to {
+    right: -200px;
+  }
+}
+
+.itemLeft,
+.itemRight {
+  width: 160px;
+  height: 80px;
+  /* background-color: #b1b1b1; */
+  /* border-radius: 6px; */
+  position: absolute;
+  animation-timing-function: linear;
+  animation-duration: 30s;
+  animation-iteration-count: infinite;
+  /* margin: 0; */
+}
+
+.roll_icon {
+  font-size: 4.6rem;
+  /* color: var(--title-color); */
+}
+
+.itemLeft {
+  left: max(calc(200px * 8), 100%);
+  animation-name: scrollLeft;
+  text-align: center;
+}
+
+.itemRight {
+  right: max(calc(200px * 8), calc(100% + 200px));
+  animation-name: scrollRight;
+  text-align: center;
+}
+
+
+
+.item1 {
+  animation-delay: calc(30s / 8 * (8 - 1) * -1);
+}
+
+.item2 {
+  animation-delay: calc(30s / 8 * (8 - 2) * -1);
+}
+
+.item3 {
+  animation-delay: calc(30s / 8 * (8 - 3) * -1);
+}
+
+.item4 {
+  animation-delay: calc(30s / 8 * (8 - 4) * -1);
+}
+
+.item5 {
+  animation-delay: calc(30s / 8 * (8 - 5) * -1);
+}
+
+.item6 {
+  animation-delay: calc(30s / 8 * (8 - 6) * -1);
+}
+
+.item7 {
+  animation-delay: calc(30s / 8 * (8 - 7) * -1);
+}
+
+.item8 {
+  animation-delay: calc(30s / 8 * (8 - 8) * -1);
+}
+/* ........................................ */

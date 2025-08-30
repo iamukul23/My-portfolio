@@ -1,0 +1,227 @@
+:root {
+  --header-height: 3rem;
+
+  /* HSL color mode */
+  --title-color: hsl(var(--hue), var(--sat), 20%);
+  --title-color-dark: hsl(var(--hue), var(--sat), 0%);
+  --text-color: hsl(var(--hue), var(--sat), 46%);
+  --body-color: hsl(var(--hue), var(--sat), 98%);
+  --container-color: hsl(var(--hue), var(--sat), 100%);
+  --accent-color: hsl(var(--hue), var(--sat), 30%);
+  --hover-color: hsl(var(--hue), var(--sat), 85%);
+
+  --body-font: "Poppins", sans-serif;
+
+  --big-font-size: 3.5rem;
+  --h1-font-size: 2.25rem;
+  --h2-font-size: 1.5rem;
+  --h3-font-size: 1.25rem;
+  --normal-font-size: 1rem;
+  --small-font-size: 0.875rem;
+  --smaller-font-size: 0.813rem;
+  --tiny-font-size: 0.625rem;
+
+  --font-normal: 400;
+  --font-medium: 500;
+  --font-semi-bold: 600;
+
+  --mb-0-25: 0.25rem;
+  --mb-0-5: 0.5rem;
+  --mb-0-75: 0.75rem;
+  --mb-1: 1rem;
+  --mb-1-5: 1.5rem;
+  --mb-2: 2rem;
+  --mb-2-5: 2.5rem;
+  --mb-3: 3rem;
+
+  --z-tooltip: 10;
+  --z-fixed: 100;
+  --z-modal: 1000;
+}
+
+body {
+  background-color: var(--body-color);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  background-color: #363636;
+  color: white;
+  border-radius: 8px 16px 8px 8px;
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.button:hover {
+  background-color: #4f4f4f;
+  transform: scale(1.02);
+}
+
+.icon {
+  font-size: 1.2rem;
+}
+
+.about {
+  margin-top: 4rem;
+}
+/* ========================== */
+/* Scroll animation */
+.fade_in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-in-out;
+  will-change: opacity, transform;
+}
+.in_view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+/* ======================== */
+
+
+/* Section titles */
+.section_titlebar {
+  text-align: center;
+  margin-bottom: var(--mb-2);
+}
+
+.section_title {
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--title-color);
+}
+
+.section_subtitle {
+  font-size: 1.25rem;
+  color: var(--text-color);
+  margin-bottom: var(--mb-2);
+}
+
+/* About section */
+.about_container {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.about_img {
+  height: 360px;
+  justify-self: center;
+  border-radius: 26px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  align-self: center;
+}
+
+.about_info {
+  grid-template-columns: repeat(3, 160px);
+  gap: 0.5rem;
+  margin-bottom: var(--mb-2);
+}
+
+.about_box {
+  background-color: #aeaeae10;
+  border: 1px solid rgba(133, 133, 133, 0.3);
+  border-radius: 0.75rem;
+  text-align: center;
+  padding: 1rem 1.25rem;
+  transition: background 0.3s ease;
+}
+
+.about_icon {
+  font-size: 2rem;
+  color: var(--accent-color);
+  margin-bottom: 0.5rem;
+}
+
+.about_title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.about_description {
+  font-size: 0.875rem;
+  color: var(--text-color);
+  padding: 0 4rem 0rem 0;
+  margin-bottom: var(--mb-2-5);
+}
+
+/* Responsive styles */
+@media screen and (max-width: 992px) {
+  .about_container {
+    grid-template-columns: 1fr;
+    row-gap: 2.5rem;
+  }
+  .about_img {
+    height: 320px;
+  }
+  .about_box {
+    padding: 0.75rem 0.5rem;
+  }
+  .about_data {
+    text-align: center;
+  }
+  .about_info {
+    justify-content: center;
+  }
+  .about_description {
+    padding: 0 5rem;
+    margin-bottom: 2rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  body {
+    margin: 0 0 var(--header-height) 0;
+  }
+  .section {
+    padding: 2rem 0 4rem;
+  }
+  .section_subtitle {
+    margin-bottom: var(--mb-3);
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .about_info {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .about_description {
+    padding: 0;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .about_info {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .about_description {
+    padding: 0 2rem;
+  }
+}

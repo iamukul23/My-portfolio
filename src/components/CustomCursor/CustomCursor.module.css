@@ -1,0 +1,21 @@
+
+
+.cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 30px;
+  height: 30px;
+  background-color: rgba(96, 96, 96, 0.381);
+  border-radius: 50%;
+  pointer-events: none; 
+  transform: translate(-50%, -50%);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  transition: opacity 0.2s ease, transform 0.1s ease;
+  z-index: 9999;
+  opacity: 1;
+}
+
+.hidden {
+  opacity: 0;
+}

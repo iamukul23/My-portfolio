@@ -1,0 +1,270 @@
+.home_content {
+  grid-template-columns: 116px repeat(2, 1fr);
+  padding-top: 8rem;
+  align-items: center;
+}
+
+.home_container {
+  row-gap: 7rem;
+}
+
+/* ..........for scrool animmation........... */
+@keyframes appear {
+  from {
+    opacity: 0;
+    clip-path: inset(100% 100% 0 0);
+  }
+  to {
+    opacity: 1;
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+.block {
+  animation: appear linear;
+  animation-timeline: view();
+  animation-range: entry 0% cover 40%;
+}
+/* ................................................ */
+
+.home_social {
+  display: grid;
+  grid-template-columns: max-content;
+  row-gap: 1rem;
+  justify-self: center;
+}
+
+.home_social_icon {
+  font-size: 1.25rem;
+  color: var(--title-color);
+  transition: color 0.3s ease;
+}
+
+.home_social_icon:hover {
+  color: rgba(141, 140, 140, 0.7);
+}
+
+.home_title {
+  font-size: 2.6rem;
+  margin-bottom: var(--mb-0-25);
+}
+
+/* .........handmovement....... */
+.hand {
+  width: 3rem;
+  padding-left: 0.5rem;
+  animation: wave 2s ease-in-out infinite;
+  transform-origin: bottom center;
+}
+
+@keyframes wave {
+  0% {
+    transform: rotate(0deg);
+  }
+  10% {
+    transform: rotate(14deg);
+  }
+  20% {
+    transform: rotate(-8deg);
+  }
+  30% {
+    transform: rotate(14deg);
+  }
+  40% {
+    transform: rotate(-4deg);
+  }
+  50% {
+    transform: rotate(10deg);
+  }
+  60% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.home_subtitle {
+  position: relative;
+  /* font-size: var(--h3-font-size); */
+  padding-left: 5.4rem;
+  /* font-weight: var(--font-normal); */
+  margin-bottom: var(--mb-1);
+}
+
+.home_subtitle::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 70px;
+  height: 2px;
+  /* color: var(--text-color); */
+  background-color: #808080;
+  top: 1rem;
+}
+
+.home_description {
+  max-width: 400px;
+  font-size: var(--small-font-size);
+  color: var(--text-color);
+  margin-bottom: var(--mb-3);
+}
+
+.home_hand {
+  width: 38px;
+  height: 38px;
+}
+.home_hand:hover {
+  transform: rotate(360deg);
+  transition: transform 0.5s ease-in-out;
+}
+
+.button_text{
+  color: white;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  background-color: #363636;
+  color: white;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.button:hover {
+  background-color: #4f4f4f;
+  transform: scale(1.03);
+}
+
+.icon {
+  display: inline-block;
+}
+
+.home_img {
+  background: url("../../assets/profile12.png.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  width: 300px;
+  height: 300px;
+  order: 1;
+  justify-self: center;
+  box-shadow: inset 0 0px 0px 8px rgb(255 255 255/ 30%);
+  animation: profile_animate 8s ease-in-out infinite 1s;
+}
+
+@keyframes profile_animate {
+  0% {
+    border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
+  }
+  50% {
+    border-radius: 30% 60% 70% 40%/50% 60% 30% 60%;
+  }
+  100% {
+    border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
+  }
+}
+
+.home_scroll {
+  margin-left: 9rem;
+}
+.wheel {
+  animation: scroll_animate 2s ease-in-out infinite;
+}
+@keyframes scroll_animate {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(3.75rem);
+  }
+}
+
+/* .........home_scrollmouse........... */
+.home_scroll_button {
+  color: var(--title-color);
+  display: flex;
+  align-items: center;
+  transition: color 0.3s ease;
+}
+
+.home_scroll_button:hover {
+  color: rgba(141, 140, 140, 0.7);
+}
+
+.home_scroll_name {
+  font-weight: var(--font-medium);
+  margin-right: 0.4rem;
+  margin-left: 1rem;
+}
+.home_scroll_arrow {
+  font-size: 1.25rem;
+}
+
+/* For large devices 992*/
+@media screen and (max-width: 992px) {
+  .home_content {
+    grid-template-columns: 100px repeat(2, 1fr);
+    column-gap: 1.25rem;
+  }
+  .home_subtitle {
+    padding-left: 3.75rem;
+    margin-bottom: var(--mb-1);
+  }
+  .home_subtitle::before {
+    width: 50px;
+    /* top: 0.75rem; */
+  }
+  .home_description {
+    max-width: initial;
+    margin-bottom: var(--mb-2-5);
+  }
+  .home_img {
+    width: 250px;
+    height: 250px;
+    box-shadow: inset 0 0px 0px 8px rgb(255 255 255/ 20%);
+  }
+  .home_scroll {
+    margin-left: 8rem;
+  }
+}
+/* For medium devices */
+@media screen and (max-width: 768px) {
+  .home_content {
+    grid-template-columns: 0.5fr 3fr;
+    column-gap: 3.5rem;
+  }
+  .home_img {
+    width: 200px;
+    height: 200px;
+    box-shadow: inset 0 0px 0px 8px rgb(255 255 255/ 20%);
+    order: initial;
+    justify-self: initial;
+  }
+  .home_data {
+    grid-column: 1/3;
+  }
+  .home_scroll {
+    display: none;
+  }
+}
+
+/* For small devices */
+@media screen and (max-width: 350px) {
+  .home_img {
+    width: 180px;
+    height: 180px;
+  }
+  .home_hand {
+    width: 22px;
+    height: 22px;
+  }
+}
